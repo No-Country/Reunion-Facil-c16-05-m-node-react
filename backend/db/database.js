@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
-
-export const sequalize = new Sequelize('reunion_amigos', 'root', '12345', {
-
+//                                      crear nombre  'username' contraseña         
+export const sequalize = new Sequelize('reunion_amigos', 'root', 'Jeis*n16', {
+    //local
     host: 'localhost',
     dialect: 'mysql',
 

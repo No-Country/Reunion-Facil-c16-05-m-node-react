@@ -8,11 +8,11 @@ const server = async (port) => {
 
         sequalize.sync({ force: false })
         app.listen(port)
-        console.log(port)
+        
         console.log(`Server is listening on port ${port} `)
 
     } catch (error) {
-
+       console.log('Error: ', error)
     }
 
 }

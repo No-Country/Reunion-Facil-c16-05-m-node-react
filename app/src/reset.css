@@ -1,0 +1,30 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    min-width: 0;
+    position: relative;
+  }
+  
+  /* esta */
+  html, body {
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  /* o esta */
+  body {
+    min-heihgt: 100vh;
+    min-height: 100dvh;
+  }
+  
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }

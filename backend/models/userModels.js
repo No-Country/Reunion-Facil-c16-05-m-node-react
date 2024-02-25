@@ -4,7 +4,8 @@ import  sequalize  from '../db/database.js';
 const User=sequalize.define('user',{
     id_user:{
         type:DataTypes.INTEGER,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement:true
     },
     username:{
         type:DataTypes.STRING(200),

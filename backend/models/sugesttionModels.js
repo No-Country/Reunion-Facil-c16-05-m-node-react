@@ -5,6 +5,7 @@ const Suggestion = sequalize.define("suggestion", {
   id_suggestion: {
     type: DataTypes.INTEGER,
     primaryKey: true,
+    autoIncrement:true
   },
   datetime: {
     type: DataTypes.DATE,

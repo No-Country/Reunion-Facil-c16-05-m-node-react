@@ -3,7 +3,7 @@ import Meeting from "./meetingModels.js";
 /* import UserRelationship from "./usersRelationshipModels.js"; */
 import User from "./userModels.js";
 import Suggestion from "./sugesttionModels.js";
-import { BelongsTo } from "sequelize";
+
 
 //User and Meeting
 User.hasMany(Meeting, { foreignKey: "id_user_org", sourceKey: "id_user" });

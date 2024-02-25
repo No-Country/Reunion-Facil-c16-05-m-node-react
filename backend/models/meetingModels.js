@@ -4,7 +4,8 @@ import  sequalize  from "../db/database.js";
 const Meeting = sequalize.define("meeting", {
   id_meeting: {
     type: DataTypes.INTEGER,
-    primaryKey:true
+    primaryKey:true,
+    autoIncrement:true
   },
   id_user_org:{
     type: DataTypes.INTEGER, 

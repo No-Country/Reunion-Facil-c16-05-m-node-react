@@ -1,4 +1,4 @@
-import { DataTypes } from "sequelize";
+/* import { DataTypes } from "sequelize";
 import sequelize from "../db/database.js";
 
 const UserRelationship = sequelize.define("user_relationship", {
@@ -16,4 +16,6 @@ const UserRelationship = sequelize.define("user_relationship", {
   },
 });
 
-export default UserRelationship;
+export default UserRelationship; 
+
+*/

@@ -1,36 +1,20 @@
 import { DataTypes } from "sequelize";
-import  sequalize  from "../db/database.js";
+import sequalize from "../db/database.js";
 
 const Suggestion = sequalize.define("suggestion", {
-  id_meeting: {
+  id_suggestion: {
     type: DataTypes.INTEGER,
     primaryKey: true,
   },
-  id_user_org:{
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-  },
-  id_user_guest: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-  },
-  num_suggestion: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-  },
-  date: {
-    type: DataTypes.DATEONLY,
-    allowNull: false,
-  },
-  time: {
-    type: DataTypes.TIME,
+  datetime: {
+    type: DataTypes.DATE,
     allowNull: false,
   },
   location: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  description: {
+  description_location: {
     type: DataTypes.TEXT,
     allowNull: true,
   },

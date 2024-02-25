@@ -8,7 +8,6 @@ const Meeting = sequalize.define("meeting", {
   },
   id_user_org:{
     type: DataTypes.INTEGER, 
-    primaryKey:true
   },
   title: {
     type: DataTypes.STRING(255),
@@ -18,6 +17,11 @@ const Meeting = sequalize.define("meeting", {
     type: DataTypes.STRING(255),
     allowNull: false,
   },
+    id_suggestion:{
+      type: DataTypes.INTEGER,
+      allowNull:false
+    }
+  
 }, {timestamps:false});
 
 

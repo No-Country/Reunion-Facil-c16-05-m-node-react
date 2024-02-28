@@ -32,10 +32,10 @@ const createMeeting = async (req, res) => {
     const newSuggestion = await Suggestion.create(suggestion);
     const data = await Meeting.create(meeting);
     const relationship = await data.setSuggestion(newSuggestion)
-    res.status(201).json(relationship);
+   return  res.status(201).json(relationship);
   }
   catch (error) {
-    res.status(500).json({
+   return  res.status(500).json({
       message:
         error.message || "Some error occurred while creating the Meeting."
     });

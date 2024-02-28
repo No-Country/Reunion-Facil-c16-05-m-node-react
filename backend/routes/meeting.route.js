@@ -3,7 +3,7 @@ const meetingRouter = Router();
 import { createMeeting, getMeetingByUser } from '../controllers/meeting.controller.js';
 
 
-meetingRouter.post('/meeting/', (req, res) => {
+meetingRouter.post('/meeting', (req, res) => {
     createMeeting(req, res);
 });
 

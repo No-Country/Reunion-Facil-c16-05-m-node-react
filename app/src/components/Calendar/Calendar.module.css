@@ -7,7 +7,7 @@
     gap: 17px;
     max-width: 310px;
     margin: auto;
-    background: var(--color-secondary);
+    outline: 1px solid var(--color-secondary);
 }
 
 .calendarContain header {

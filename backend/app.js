@@ -11,28 +11,19 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>server</h1>");
+    res.send("<h1>server</h1>");
 });
 
 app.get("/user", async (req, res) => {
-  try {
-    const user = await User.findAll({});
-    return res.status(200).json(user);
-  } catch (error) {
-    return res.status(404).json({ message: error });
-  }
+    try {
+        const user = await User.findAll({});
+        return res.status(200).json(user);
+    } catch (error) {
+        return res.status(404).json({ message: error });
+    }
 });
 
-app.get("/meeting", async (req, res) => {
-  const id = req.params.id;
-  try {
-    const meeting = await Meeting.findAll();
-     
-    return res.status(200).json(meeting);
-  } catch (error) {
-    return res.status(404).json({ message: error });
-  }
-});
+
 
 
 app.use("/meeting", meetingRouter);

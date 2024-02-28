@@ -19,8 +19,7 @@ const Meeting = sequalize.define("meeting", {
     allowNull: false,
   },
     id_suggestion:{
-      type: DataTypes.INTEGER,
-      allowNull:false
+      type: DataTypes.INTEGER
     }
   
 }, {timestamps:false});

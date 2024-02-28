@@ -1,43 +1,43 @@
 :root {
-  --text-xs: 10px;
-  --text-2xs: 12px;
-  --text-sm: 14px;
-  --text-base: 16px;
+    --text-xs: 10px;
+    --text-2xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
 
-  --color-error: #FE0808;
-  --color-primary: #000;
-  --color-button: #F5F5F5;
-  --color-secondary: #A5A2A2;
-  --color-stuffed: #838080;
+    --color-error: #FE0808;
+    --color-primary: #000;
+    --color-button: #F5F5F5;
+    --color-secondary: #A5A2A2;
+    --color-stuffed: #838080;
 
-  --rounded: 4px;
+    --rounded: 4px;
 
-  --font-regular: 400;
-  --font-medium: 500;
-  --font-semi-bold: 600;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Regular.ttf');
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Medium.ttf');
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Medium.ttf');
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-SemiBold.ttf');
+    font-family: 'Inter';
+    src: url('/fonts/Inter-SemiBold.ttf');
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 #root {
-  margin: auto;
-  width: 360px;
-  margin-top: 20px;
+    margin: auto;
+    width: 360px;
+    margin-top: 20px;
 }

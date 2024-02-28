@@ -1,9 +1,7 @@
 import express from "express";
 import morgan from "morgan";
-import User from "./models/userModels.js";
-import Meeting from "./models/meetingModels.js";
-import Suggestion from "./models/sugesttionModels.js";
 import meetingRouter from "./routes/meeting.route.js";
+import userRouter from "./routes/user.route.js";
 const app = express();
 
 //middleware
@@ -11,20 +9,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("<h1>server</h1>");
+  res.send("<h1>server</h1>");
 });
 
-app.get("/user", async (req, res) => {
-    try {
-        const user = await User.findAll({});
-        return res.status(200).json(user);
-    } catch (error) {
-        return res.status(404).json({ message: error });
-    }
-});
-
-
-
-
-app.use("/meeting", meetingRouter);
+// /api/
+app.use("/api/v1", meetingRouter);
+app.use("/api/v1", userRouter)
 export default app;

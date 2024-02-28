@@ -1,7 +1,6 @@
 import Meeting from '../models/meetingModels.js';
 import Suggestion from '../models/sugesttionModels.js';
 import User from '../models/userModels.js';
-import Suggestion from '../models/sugesttionModels.js';
 
 // Create and Save a new Meeting
 const createMeeting = async (req, res) => {

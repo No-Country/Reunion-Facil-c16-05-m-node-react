@@ -3,6 +3,7 @@ import morgan from "morgan";
 import User from "./models/userModels.js";
 import Meeting from "./models/meetingModels.js";
 import Suggestion from "./models/sugesttionModels.js";
+import meetingRouter from "./routes/meeting.route.js";
 const app = express();
 
 //middleware
@@ -33,4 +34,6 @@ app.get("/meeting", async (req, res) => {
   }
 });
 
+
+app.use("/meeting", meetingRouter);
 export default app;

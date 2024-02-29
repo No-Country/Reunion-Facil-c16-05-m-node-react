@@ -30,6 +30,14 @@
     color: var(--color-secondary);
 }
 
+.containerInput div button {
+    position: absolute;
+}
+
+.containerInput div button svg {
+    top: 8px
+}
+
 .containerInput label span {
     text-align: start;
     margin-left: 14px;
@@ -48,6 +56,10 @@
 }
 
 .containerInput label input:focus::placeholder {
+    color: var(--color-primary);
+}
+
+.containerInput label input:focus + button svg {
     color: var(--color-primary);
 }
 

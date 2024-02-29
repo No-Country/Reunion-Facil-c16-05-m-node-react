@@ -1,21 +1,17 @@
 import { InputForm } from '../Form/InputForm/InputForm'
 import style from './EventProposalInput.module.css'
-import { Clock, Calendar, MapPin } from '../../icons'
+import { Clock, MapPin } from '../../icons'
+import { CalendarAll } from '../CalendarAll/CalendarAll'
 
 export function EventProposalInput ({ register, errors }) {
   return (
     <div className={style.container}>
       <div className={style.containerTempo}>
-        <InputForm
-          type='text'
-          label='Fecha'
+
+        <CalendarAll
+          errors={errors?.date}
           register={register}
-          placeholder='01/02/2024'
-          id='date'
-          error={errors?.date}
-        >
-          <Calendar />
-        </InputForm>
+         />
 
         <InputForm
           type='text'

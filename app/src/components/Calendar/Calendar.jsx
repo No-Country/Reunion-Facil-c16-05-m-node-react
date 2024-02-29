@@ -1,18 +1,16 @@
 import { WeekDay } from '../WeekDay/WeekDay.jsx'
 import style from './Calendar.module.css'
-import { useCalendar } from '../../hook/useCalendar.js'
-
-export function Calendar () {
-  const {
-    year,
-    month,
-    incrementMonth,
-    decrementMonth,
-    daySelect,
-    updateDay,
-    confirmDate
-  } = useCalendar()
-
+import { useFieldArray } from 'react-hook-form'
+export function Calendar ({
+  year,
+  month,
+  incrementMonth,
+  decrementMonth,
+  daySelect,
+  updateDay,
+  confirmDate,
+  onClose
+}) {
   const LANG = 'es'
 
   const startOn = new Date(year, month, 1).getDay()
@@ -29,14 +27,18 @@ export function Calendar () {
   return (
     <div className={style.calendarContain}>
       <header>
-        <button onClick={decrementMonth}> { '<' } </button>
+        <button type='button' onClick={decrementMonth}> { '<' } </button>
         <h1 className={style['year-month']}>
           {`${monthName.split('')
             .with(0, monthName[0].toUpperCase())
             .join('')
             } ${year}`}
         </h1>
-        <button onClick={incrementMonth} > { '>' } </button>
+        <button
+          type='button'
+          onClick={incrementMonth}>
+          {'>'}
+        </button>
       </header>
 
       <WeekDay lang={LANG} />
@@ -52,7 +54,8 @@ export function Calendar () {
                 ? { gridColumnStart: startOn.toString() }
                 : {}}
               >
-              <button
+                <button
+                  type='button'
                   className={daySelect === idMonth.toString()
                     ? style['day-selected']
                     : ''}
@@ -70,13 +73,17 @@ export function Calendar () {
         }
       </ol>
       <footer>
-        <button onClick={() => {
-          confirmDate({ year, month, day: daySelect })
-          console.log(new Date(year, month, daySelect))
-        }}>
+        <button
+          type='button'
+          onClick={() => {
+            confirmDate({ year, month, day: daySelect })
+            if (typeof onClose === 'function') onClose()
+          }}>
           Aceptar
         </button>
-        <button>Cancelar</button>
+        <button
+          type='button'
+          onClick={() => typeof onClose === 'function' && onClose()}>Cancelar</button>
       </footer>
     </div>
   )

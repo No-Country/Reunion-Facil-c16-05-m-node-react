@@ -1,12 +1,9 @@
 import './App.css'
-import { EventCreationForm } from './pages/EventCreationForm'
+import ClockCard from './components/ClockCard/ClockCard'
 
 function App () {
   return (
-    <>
-      {/* <h1>Inicio de la App Reunion Facil</h1> */}
-      <EventCreationForm />
-    </>
+    <ClockCard/>
   )
 }
 

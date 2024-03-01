@@ -21,6 +21,7 @@ export function EventCreationForm () {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors }
   } =
     useForm({
@@ -76,7 +77,8 @@ export function EventCreationForm () {
       <EventProposalInput
         register={register}
         errors={errors}
-      />
+        setValue={setValue}
+        />
 
       <AreaForm
         label='Descripción lugar'

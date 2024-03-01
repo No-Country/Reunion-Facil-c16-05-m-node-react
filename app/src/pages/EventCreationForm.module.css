@@ -1,0 +1,63 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-inline: 20px;
+    margin-top: 20px;
+}
+
+.interaction {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 7px; 
+}
+
+.addGuest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 12px;
+    gap: 20px;
+    width: 243px;
+    margin: auto;
+    border: 0;
+    font-size: var(--text-base);
+}
+
+.addGuest:active {
+    background: #000;
+    color: #fff
+}
+
+.addGuest:active > svg {
+    background: #fff;
+    color:#000;
+}
+
+.addGuest svg {
+    background: #2a2a2a;
+    border-radius: var(--rounded);
+    color: rgb(235, 235, 235);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.addGuest:disabled > svg {
+    background: #bcbcbc;
+}
+
+.createEvent {
+    width: 243px;
+    margin: auto;
+    padding-block: 12px;
+    font-size: var(--text-base);
+    border-radius: var(--rounded);
+    color: var(--color-button);
+    background: var(--color-secondary);
+    border: 0;
+}
+
+.createEvent:active {
+    outline: 1px solid var(--color-primary)
+}

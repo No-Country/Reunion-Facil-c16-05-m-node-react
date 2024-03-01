@@ -1,0 +1,7 @@
+.days-of-month {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center ;
+    font-size: var(--text-2xs);
+}

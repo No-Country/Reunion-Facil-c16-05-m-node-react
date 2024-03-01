@@ -3,7 +3,7 @@ import style from './EventProposalInput.module.css'
 import { Clock, MapPin } from '../../icons'
 import { CalendarAll } from '../CalendarAll/CalendarAll'
 
-export function EventProposalInput ({ register, errors }) {
+export function EventProposalInput ({ register, errors , setValue }) {
   return (
     <div className={style.container}>
       <div className={style.containerTempo}>
@@ -11,6 +11,7 @@ export function EventProposalInput ({ register, errors }) {
         <CalendarAll
           errors={errors?.date}
           register={register}
+          setValue={setValue}
          />
 
         <InputForm

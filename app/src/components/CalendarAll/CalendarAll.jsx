@@ -5,7 +5,7 @@ import { useCalendar } from '../../hook/useCalendar'
 import { PopUp } from '../PopUp/PopUp'
 import { PopUpContainer } from '../PopUpContainer/PopUpContainer'
 
-export function CalendarAll ({ error, register }) {
+export function CalendarAll ({ error, register , setValue }) {
   const {
     date,
     year,
@@ -38,6 +38,7 @@ export function CalendarAll ({ error, register }) {
         daySelect={daySelect}
         updateDay={updateDay}
         confirmDate={confirmDate}
+        setValue={setValue}
         />
     </PopUp>
   )

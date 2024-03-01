@@ -1,6 +1,5 @@
 import { WeekDay } from '../WeekDay/WeekDay.jsx'
 import style from './Calendar.module.css'
-import { useFieldArray } from 'react-hook-form'
 export function Calendar ({
   year,
   month,
@@ -9,7 +8,8 @@ export function Calendar ({
   daySelect,
   updateDay,
   confirmDate,
-  onClose
+  onClose,
+  setValue
 }) {
   const LANG = 'es'
 
@@ -76,6 +76,11 @@ export function Calendar ({
         <button
           type='button'
           onClick={() => {
+            if (daySelect === 0) return
+
+            confirmDate({ year, month, day: daySelect })
+            const date = `${daySelect.toString().padStart(2, '0')}/${(month + 1).toString().padStart(2, '0')}/${year}`
+            setValue('date', date)
             confirmDate({ year, month, day: daySelect })
             if (typeof onClose === 'function') onClose()
           }}>

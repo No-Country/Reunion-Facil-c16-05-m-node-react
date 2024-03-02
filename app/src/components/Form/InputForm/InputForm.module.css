@@ -23,19 +23,23 @@
     position: relative;
 }
 
-.containerInput div svg {
+.containerInput div button {
+    right: 7px;
+	top: 10px;
+    position: absolute;
+    background: none;
+    border: 0;
+}
+
+.containerInput div button svg {
+    color: var(--color-secondary);
+}
+
+.containerInput div > svg {
 	position: absolute;
 	right: 7px;
 	top: 10px;
     color: var(--color-secondary);
-}
-
-.containerInput div button {
-    position: absolute;
-}
-
-.containerInput div button svg {
-    top: 8px
 }
 
 .containerInput label span {

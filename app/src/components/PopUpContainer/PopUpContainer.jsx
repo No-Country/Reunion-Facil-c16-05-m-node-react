@@ -1,5 +1,4 @@
 import { cloneElement } from 'react'
-import './PopUpContainer.css'
 
 export function PopUpContainer ({ children, icon, onOpen }) {
   return (
@@ -8,10 +7,9 @@ export function PopUpContainer ({ children, icon, onOpen }) {
         cloneElement(children,
           {},
             <button
-              className='icon-input'
-              type='button'
-              onClick={() => typeof onOpen === 'function' && onOpen()}>
-              {icon}
+                type='button'
+                onClick={() => typeof onOpen === 'function' && onOpen()}>
+                {icon}
             </button>)
       }
     </>

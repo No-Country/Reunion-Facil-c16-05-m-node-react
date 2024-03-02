@@ -7,7 +7,6 @@ import { PopUpContainer } from '../PopUpContainer/PopUpContainer'
 
 export function CalendarAll ({ error, register , setValue }) {
   const {
-    date,
     year,
     month,
     incrementMonth,

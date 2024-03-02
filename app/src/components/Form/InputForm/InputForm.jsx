@@ -1,4 +1,5 @@
 import style from './InputForm.module.css'
+
 export function InputForm ({ register, label, error, type, placeholder, id, children }) {
   return (
     <div className={style.containerInput}>

@@ -1,9 +1,19 @@
 import { InputForm } from '../Form/InputForm/InputForm'
 import style from './EventProposalInput.module.css'
-import { Clock, MapPin } from '../../icons'
-import { CalendarAll } from '../CalendarAll/CalendarAll'
 
-export function EventProposalInput ({ register, errors , setValue }) {
+import { MapPin } from '../../icons'
+import { CalendarAll } from '../CalendarAll/CalendarAll'
+import { ClockCardAll } from '../ClockCardAll/ClockCardAll'
+import { useState } from 'react'
+
+export function EventProposalInput ({ register, errors, setValue }) {
+  const [selectedTime, setSelectedTime] = useState('19:00')
+
+  const handleTimeChange = (time) => {
+    setSelectedTime(time)
+    setValue('hour', time)
+  }
+
   return (
     <div className={style.container}>
       <div className={style.containerTempo}>
@@ -12,18 +22,16 @@ export function EventProposalInput ({ register, errors , setValue }) {
           errors={errors?.date}
           register={register}
           setValue={setValue}
-         />
+        />
 
-        <InputForm
-          type='text'
-          label='Hora'
+        <ClockCardAll
+          errors={errors?.date}
           register={register}
-          placeholder='19:00'
-          id='hour'
-          error={errors?.hour}
-        >
-          <Clock />
-        </InputForm>
+          selectedTime={selectedTime}
+          onTimeChange={handleTimeChange}
+          setValue={setValue}
+        />
+            
       </div>
 
       <InputForm

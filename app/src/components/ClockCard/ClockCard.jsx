@@ -1,18 +1,16 @@
 import style from './ClockCard.module.css'
-import { useClockContext } from '../../context/ClockContext.jsx'
 
-function ClockCard () {
-  const {
-    selectedHour,
-    selectedMinutes,
-    selectedPeriod,
-    handleHourChange,
-    handleMinutesChange,
-    handlePeriodChange,
-    handleCancel,
-    handleAccept
-  } = useClockContext()
-
+function ClockCard ({
+  selectedHour,
+  selectedMinutes,
+  selectedPeriod,
+  handleHourChange,
+  handleMinutesChange,
+  handlePeriodChange,
+  onClose,
+  setValue,
+  onAccept
+}) {
   return (
     <div className={style['clock-card']}>
       <div className={style.content}>
@@ -62,16 +60,21 @@ function ClockCard () {
           <div className={style['action-buttons']}>
             <button
               className={`${style['cancel-button']} ${style.accepted}`}
-              onClick={handleCancel}
+              onClick={() => {
+                onClose()
+              }}
             >
               Cancelar
             </button>
             <button
-              className={`${style['accept-button']} ${style.accepted}`}
-              onClick={handleAccept}
-            >
-              Aceptar
-            </button>
+            className={`${style['accept-button']} ${style.accepted}`}
+            onClick={() => {
+              onAccept()
+              onClose()
+            }}
+          >
+            Aceptar
+          </button>
           </div>
         </div>
       </div>

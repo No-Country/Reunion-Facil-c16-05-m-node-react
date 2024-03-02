@@ -1,8 +1,6 @@
-import { createContext, useState } from 'react'
+import { useState } from 'react'
 
-export const ClockContext = createContext()
-
-export function ClockProvider ({ children }) {
+export function useClock (setValue) {
   const [selectedHour, setSelectedHour] = useState('00')
   const [selectedMinutes, setSelectedMinutes] = useState('00')
   const [selectedPeriod, setSelectedPeriod] = useState('')
@@ -23,28 +21,18 @@ export function ClockProvider ({ children }) {
     setSelectedPeriod(period)
   }
 
-  const handleCancel = () => {
-    // TODO: Cancel and close pop up
+  const confirmTime = () => {
+    const formattedTime = `${selectedHour}:${selectedMinutes} ${selectedPeriod}`
+    setValue('hour', formattedTime)
   }
 
-  const handleAccept = () => {
-    // TO DO: Accept and send data to backend
-  }
-
-  const contextValues = {
+  return {
     selectedHour,
     selectedMinutes,
     selectedPeriod,
     handleHourChange,
     handleMinutesChange,
     handlePeriodChange,
-    handleCancel,
-    handleAccept
+    confirmTime
   }
-
-  return (
-    <ClockContext.Provider value={contextValues}>
-      {children}
-    </ClockContext.Provider>
-  )
 }

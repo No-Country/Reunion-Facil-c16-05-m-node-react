@@ -1,0 +1,118 @@
+.clock-card {
+    width: 243px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: var(--rounded);
+    border: 1px;
+    border-style: dotted;
+  }
+
+.inputs{
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.hourSelector {
+    width: 70px;
+    height: 50px;
+    border-radius: var(--rounded);
+    font-size: 40px;
+    background-color: rgb(233, 233, 233);
+    border: none;
+    margin: 0px 5px;
+    text-align: center;
+  }
+
+  .title {
+    font-family: 'Inter';
+    font-style: medium;
+    font-size: var(--text-2xs);
+    line-height: auto;
+    letter-spacing: 0%;
+    margin-left: -150px;
+    margin-bottom: 20px;
+  }
+
+.content{
+    flex:1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.span{
+    font-size: 40px;
+    align-items: center;
+}
+
+.period-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    width: 35px;
+    height: 50px;
+    align-items: center;
+}
+
+.period-button {
+    border-radius: 4px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 10px;
+    border-color: black;
+}
+
+.period-button.selected {
+    background-color: rgb(233, 233, 233);
+    color: rgb(0, 0, 0);
+    border: rgb(123, 123, 123);
+}
+
+.action-buttons {
+    display: flex;
+    margin-top: 35px;
+    justify-content: flex-end;
+}
+
+.cancel-button,
+.accept-button {
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: inherit;
+    color: rgb(123, 123, 123);
+    font-size: 10px;
+}
+
+.selected-time {
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(49, 48, 48);
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.label{
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.cancel-button.accepted,
+.accept-button.accepted {
+    color: rgb(0, 0, 0);
+    border: none;
+}

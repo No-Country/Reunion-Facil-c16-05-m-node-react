@@ -1,0 +1,72 @@
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+}
+
+.containerInput .error {
+    color:var(--color-error);
+    text-align: start;
+    font-weight: var(--font-regular);
+    font-size: var(--text-2xs);
+}
+
+.containerInput label {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    font-weight: var(--font-medium);
+    font-size: var(--text-2xs);
+}
+
+.containerInput div {
+    position: relative;
+}
+
+.containerInput div button {
+    right: 7px;
+	top: 10px;
+    position: absolute;
+    background: none;
+    border: 0;
+}
+
+.containerInput div button svg {
+    color: var(--color-secondary);
+}
+
+.containerInput div > svg {
+	position: absolute;
+	right: 7px;
+	top: 10px;
+    color: var(--color-secondary);
+}
+
+.containerInput label span {
+    text-align: start;
+    margin-left: 14px;
+}
+
+.containerInput label input {
+    padding: 14px;
+    width: 100%;
+    border-radius: var(--rounded);
+    border: 1px solid var(--color-secondary);
+}
+
+.containerInput label input::placeholder {
+    font-size: var(--text-base);
+    font-weight: var(--font-regular);
+}
+
+.containerInput label input:focus::placeholder {
+    color: var(--color-primary);
+}
+
+.containerInput label input:focus + button svg {
+    color: var(--color-primary);
+}
+
+.containerInput label input:focus + svg {
+    color: var(--color-primary);
+}

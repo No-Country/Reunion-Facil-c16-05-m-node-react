@@ -1,0 +1,37 @@
+.containerArea {
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+}
+
+.containerArea .error {
+    color:var(--color-error);
+    text-align: start;
+    font-weight: var(--font-regular);
+    font-size: var(--text-2xs);
+}
+
+.containerArea label {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    font-weight: var(--font-medium);
+    font-size: var(--text-2xs);
+}
+
+.containerArea label span {
+    text-align: start;
+    margin-left: 14px;
+}
+
+.containerArea label textarea {
+    padding: 14px;
+}
+.containerArea label textarea::placeholder {
+    font-size: var(--text-base);
+    font-weight: var(--font-regular);
+}
+
+.containerArea label textarea:focus::placeholder {
+    color: var(--color-primary);
+}

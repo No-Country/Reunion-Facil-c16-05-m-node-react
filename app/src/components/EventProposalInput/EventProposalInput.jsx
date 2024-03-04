@@ -1,5 +1,6 @@
 import { InputForm } from '../Form/InputForm/InputForm'
 import style from './EventProposalInput.module.css'
+
 import { MapPin } from '../../icons'
 import { CalendarAll } from '../CalendarAll/CalendarAll'
 import { ClockCardAll } from '../ClockCardAll/ClockCardAll'
@@ -30,6 +31,7 @@ export function EventProposalInput ({ register, errors, setValue }) {
           onTimeChange={handleTimeChange}
           setValue={setValue}
         />
+            
       </div>
 
       <InputForm

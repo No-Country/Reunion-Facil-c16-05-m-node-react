@@ -11,6 +11,9 @@ function ClockCard ({
   setValue,
   onAccept
 }) {
+  const isInputValid = () => {
+    return selectedHour !== '' && selectedMinutes !== '' && selectedPeriod !== ''
+  }
   return (
     <div className={style['clock-card']}>
       <div className={style.content}>
@@ -67,14 +70,19 @@ function ClockCard ({
               Cancelar
             </button>
             <button
-            className={`${style['accept-button']} ${style.accepted}`}
-            onClick={() => {
-              onAccept()
-              onClose()
-            }}
-          >
-            Aceptar
-          </button>
+              className={`${style['accept-button']} ${style.accepted}`}
+              onClick={() => {
+                if (isInputValid()) {
+                  onAccept()
+                  onClose()
+                } else {
+                  alert('Por favor, selecciona un periodo.')
+                }
+              }}
+              disabled={!isInputValid()}
+            >
+              Aceptar
+            </button>
           </div>
         </div>
       </div>

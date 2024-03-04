@@ -6,7 +6,7 @@ export function useClock (setValue) {
   const [selectedPeriod, setSelectedPeriod] = useState('')
 
   const handleHourChange = (hour) => {
-    if (hour === '' || (/^\d+$/.test(hour) && Number(hour, 10) >= 0 && Number(hour, 10) <= 24)) {
+    if (hour === '' || (/^\d+$/.test(hour) && parseInt(hour, 10) >= 1 && parseInt(hour, 10) <= 12)) {
       setSelectedHour(hour)
     }
   }
@@ -18,11 +18,22 @@ export function useClock (setValue) {
   }
 
   const handlePeriodChange = (period) => {
+    if (period === 'PM' && parseInt(selectedHour, 10) < 12) {
+      setSelectedHour((parseInt(selectedHour, 10) + 12).toString().padStart(2, '0'))
+    } else if (period === 'AM' && parseInt(selectedHour, 10) === 12) {
+      setSelectedHour('00')
+    }
     setSelectedPeriod(period)
   }
 
   const confirmTime = () => {
-    const formattedTime = `${selectedHour}:${selectedMinutes} ${selectedPeriod}`
+    const formattedMinutes = selectedMinutes.padStart(2, '0')
+    const formattedHour = selectedPeriod === 'PM' && parseInt(selectedHour, 10) < 12
+      ? (parseInt(selectedHour, 10) + 12).toString().padStart(2, '0')
+      : selectedPeriod === 'AM' && parseInt(selectedHour, 10) === 12
+        ? '00'
+        : selectedHour.padStart(2, '0')
+    const formattedTime = `${formattedHour}:${formattedMinutes}`
     setValue('hour', formattedTime)
   }
 

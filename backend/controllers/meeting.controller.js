@@ -2,7 +2,7 @@ import Meeting from "../models/meetingModels.js";
 import Suggestion from "../models/sugesttionModels.js";
 import User from "../models/userModels.js";
 import Guest from "../models/guestModels.js";
-
+import moment from "moment/moment.js";
 // Create and Save a new Meeting
 //Datos necesarios: title, id_user_org, suggestion{datetime, location}, guest{guest}
 const createMeeting = async (req, res) => {
@@ -41,11 +41,11 @@ const createMeeting = async (req, res) => {
         id_meeting: data.getDataValue("id_meeting"),
       });
     }
-
+    const suggestionDateTime = moment(newSuggestion.getDataValue("datetime")).format("YYYY-MM-DD HH:mm:ss");
     return res.status(201).json({
-      ...relationship,
+      ...relationship.dataValues,
       suggestion: {
-        datetime: newSuggestion.getDataValue("datetime"),
+        datetime: suggestionDateTime,
         location: newSuggestion.getDataValue("location"),
         description_location: newSuggestion.getDataValue(
           "description_location"

@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extends:false}));
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("<h1>server</h1>");
 });
 

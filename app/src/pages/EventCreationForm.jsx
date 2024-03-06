@@ -3,6 +3,7 @@ import style from './EventCreationForm.module.css'
 import { InputForm } from '../components/Form/InputForm/InputForm'
 import { AreaForm } from '../components/Form/AreaForm/AreaForm'
 import { EventProposalInput } from '../components/EventProposalInput/EventProposalInput'
+import { Header } from '../components/Header/Header'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -55,44 +56,45 @@ export function EventCreationForm () {
   })
 
   return (
-  <>
-    <form className={style.formContainer} onSubmit={onSubmit}>
-      <InputForm
-        type='text'
-        label='Nombre reunión'
-        register={register}
-        placeholder='Qué título tiene la reunión'
-        id='nameEvent'
-        error={errors?.nameEvent}
-      />
-
-      <AreaForm
-        label='Descripción reunión'
-        register={register}
-        placeholder='Deseas agregar algún detalle'
-        id='describeEvent'
-        error={errors?.describeEvent}
-      />
-
-      <EventProposalInput
-        register={register}
-        errors={errors}
-        setValue={setValue}
+    <>
+      <Header />
+      <form className={style.formContainer} onSubmit={onSubmit}>
+        <InputForm
+          type='text'
+          label='Nombre reunión'
+          register={register}
+          placeholder='Qué título tiene la reunión'
+          id='nameEvent'
+          error={errors?.nameEvent}
         />
 
-      <AreaForm
-        label='Descripción lugar'
-        register={register}
-        placeholder='Deseas agregar algún detalle'
-        id='describePlace'
-        error={errors?.describePlace}
-      />
-      <div className={style.interaction}>
-        <button disabled type='button' className={style.addGuest}>Agregar Invitados <Plus /></button>
-        <button className={style.createEvent} type='submit'> Crear reunión </button>
-      </div>
-    </form>
-    <ToastContainer />
-  </>
+        <AreaForm
+          label='Descripción reunión'
+          register={register}
+          placeholder='Deseas agregar algún detalle'
+          id='describeEvent'
+          error={errors?.describeEvent}
+        />
+
+        <EventProposalInput
+          register={register}
+          errors={errors}
+          setValue={setValue}
+        />
+
+        <AreaForm
+          label='Descripción lugar'
+          register={register}
+          placeholder='Deseas agregar algún detalle'
+          id='describePlace'
+          error={errors?.describePlace}
+        />
+        <div className={style.interaction}>
+          <button disabled type='button' className={style.addGuest}>Agregar Invitados <Plus /></button>
+          <button className={style.createEvent} type='submit'> Crear reunión </button>
+        </div>
+      </form>
+      <ToastContainer />
+    </>
   )
 }

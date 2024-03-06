@@ -11,12 +11,13 @@ const Meeting = sequalize.define("meeting", {
     type: DataTypes.INTEGER, 
   },
   title: {
-    type: DataTypes.STRING(255),
+    type: DataTypes.STRING(45),
     allowNull: false,
   },
   description: {
-    type: DataTypes.STRING(255),
+    type: DataTypes.STRING(100),
     allowNull: false,
+    
   },
     id_suggestion:{
       type: DataTypes.INTEGER

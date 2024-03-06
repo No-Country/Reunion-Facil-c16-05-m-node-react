@@ -12,11 +12,11 @@ const Suggestion = sequalize.define("suggestion", {
     allowNull: false,
   },
   location: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(70),
     allowNull: false,
   },
   description_location: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(100),
     allowNull: true,
   },
 });

@@ -1,7 +1,6 @@
 
 export const validateSchema=(schema)=>(req,res,next)=>{
     try {
-      console.log(req.body)
         const validatedData = schema.parse(req.body);
         req.validatedData = validatedData;
         next();
@@ -11,7 +10,7 @@ export const validateSchema=(schema)=>(req,res,next)=>{
       ? err.errors.map((error) => error.message)
       : [];
     const errorMessage = errorMessages.join(', ');
-    return res.status(400).json({ error: errorMessage || 'Error de validación' });
+    return res.status(400).json({ error: errorMessage || 'Error of validated' });
       }
 
 

@@ -31,7 +31,6 @@ export function EventProposalInput ({ register, errors, setValue }) {
           onTimeChange={handleTimeChange}
           setValue={setValue}
         />
-
       </div>
 
       <InputForm

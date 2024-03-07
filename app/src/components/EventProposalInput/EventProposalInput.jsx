@@ -19,13 +19,13 @@ export function EventProposalInput ({ register, errors, setValue }) {
       <div className={style.containerTempo}>
 
         <CalendarAll
-          errors={errors?.date}
+          error={errors?.date}
           register={register}
           setValue={setValue}
         />
 
         <ClockCardAll
-          errors={errors?.date}
+          error={errors?.hour}
           register={register}
           selectedTime={selectedTime}
           onTimeChange={handleTimeChange}

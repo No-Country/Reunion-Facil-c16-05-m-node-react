@@ -42,7 +42,7 @@ function ClockCard ({
               <label className={style.label}>Minutos</label>
             </div>
             <div className={style['period-buttons']}>
-              <button
+              <button type='button'
                 className={`${style['period-button']} ${
                   selectedPeriod === 'AM' ? style.selected : ''
                 }`}
@@ -50,7 +50,7 @@ function ClockCard ({
               >
                 AM
               </button>
-              <button
+              <button type='button'
                 className={`${style['period-button']} ${
                   selectedPeriod === 'PM' ? style.selected : ''
                 }`}

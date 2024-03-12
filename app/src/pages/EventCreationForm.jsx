@@ -3,7 +3,6 @@ import style from './EventCreationForm.module.css'
 import { InputForm } from '../components/Form/InputForm/InputForm'
 import { AreaForm } from '../components/Form/AreaForm/AreaForm'
 import { EventProposalInput } from '../components/EventProposalInput/EventProposalInput'
-import { Header } from '../components/Header/Header'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -84,7 +83,6 @@ export function EventCreationForm () {
 
   return (
     <>
-      <Header />
       <form className={style.formContainer} onSubmit={onSubmit}>
         <InputForm
           type='text'

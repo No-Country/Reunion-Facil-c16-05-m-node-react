@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header span {
     margin-left: 14px;
     font-size: var(--text-sm);

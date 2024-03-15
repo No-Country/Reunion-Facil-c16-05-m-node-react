@@ -8,7 +8,7 @@ const User=sequalize.define('user',{
         autoIncrement:true
     },
     username:{
-        type:DataTypes.STRING(200),
+        type:DataTypes.STRING(100),
         allowNull:false,
     },
     nickname:{

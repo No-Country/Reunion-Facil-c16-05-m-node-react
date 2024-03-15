@@ -1,8 +1,8 @@
 import style from './EventCreationForm.module.css'
 
-import { InputForm } from '../components/Form/InputForm/InputForm'
-import { AreaForm } from '../components/Form/AreaForm/AreaForm'
-import { EventProposalInput } from '../components/EventProposalInput/EventProposalInput'
+import { InputForm } from '../../components/Form/InputForm/InputForm'
+import { AreaForm } from '../../components/Form/AreaForm/AreaForm'
+import { EventProposalInput } from '../../components/EventProposalInput/EventProposalInput'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -11,9 +11,9 @@ import { useForm } from 'react-hook-form'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { EventSchema } from '../validators/EventSchema'
-import { ProposalSchema } from '../validators/ProposalSchema'
-import { Plus } from '../icons'
+import { EventSchema } from '../../validators/EventSchema'
+import { ProposalSchema } from '../../validators/ProposalSchema'
+import { Plus } from '../../icons'
 
 const schema = EventSchema.merge(ProposalSchema)
 

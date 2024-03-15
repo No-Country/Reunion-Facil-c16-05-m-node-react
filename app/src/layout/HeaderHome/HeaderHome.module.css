@@ -1,0 +1,51 @@
+body {
+    background: rgb(255, 160, 160);
+}
+
+.headerContainer {
+    background: var(--color-secondary);
+}
+
+.containHeaderHome {
+    display: flex;
+    padding: 15px 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 230px;
+}
+
+.containHeaderHome span {
+    display: flex;
+    max-width: 100px;
+    font-size: var(--text-base);
+}
+
+.containHeaderHome button {
+    background: transparent;
+    border: 0;
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    padding-block: 24px;
+    padding-bottom: 100px;
+    background: var(--color-secondary);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.menu li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    color: white;
+}

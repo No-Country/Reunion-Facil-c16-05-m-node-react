@@ -1,0 +1,35 @@
+.containPrincipal {
+    display: flex;
+    gap: 15px;
+    padding: 20px ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 250px;
+}
+
+.cardSuggestion {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-block: 10px;
+    background: red;
+    width: 300px;
+    border-radius: var(--rounded);
+}
+
+.cardSuggestion div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardSuggestion div span:nth-child(2) {
+    font-size: var(--text-2xs);
+    opacity: .8;
+}
+
+.plus {
+    background: red;
+    padding: 15px;
+    border-radius: var(--rounded);
+}

@@ -1,0 +1,15 @@
+.input-search{
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputfriends{
+    background-color: inherit;
+    margin: 25.87px 16px 0px 16px ;
+    height: 40px;
+    border-radius: 4px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: grey;
+}

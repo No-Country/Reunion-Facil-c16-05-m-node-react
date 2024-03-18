@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10px;
+    background: var(--color-secondary);
+    border-top-left-radius: var(--rounded);
+    border-top-right-radius: var(--rounded);
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header span {
+    margin-left: 14px;
+    font-size: var(--text-sm);
+}
+
+.header svg {
+    width:105px;
+    color: var(--color-primary);
+}

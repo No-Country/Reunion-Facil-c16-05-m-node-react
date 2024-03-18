@@ -1,19 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-// import { EventCreationForm } from './pages/EventCreationForm'
-import { GuestsInvitation } from './pages/GuestsInvitation'
-import Header from './components/Header/Header'
+import { EventCreationForm } from './pages/EventCreationForm'
+import { Header } from './layout/Header/Header'
 
 function App () {
   return (
-    <>
-    <BrowserRouter>
-    <Header/>
     <Routes>
-      <Route path = '/' element = {<GuestsInvitation/>}/>
+      <Route path='/crear-reunion' element={<Header />}>
+        <Route index element={<EventCreationForm />} />
+        <Route path='invitado' element={<h1>Pantalla de agregar invitado</h1>} />
+      </Route>
     </Routes>
-    </BrowserRouter>
-    </>
   )
 }
 

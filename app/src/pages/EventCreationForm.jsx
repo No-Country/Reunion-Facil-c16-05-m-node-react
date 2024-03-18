@@ -29,25 +29,52 @@ export function EventCreationForm () {
     })
 
   const onSubmit = handleSubmit((data) => {
+    const { hour, date } = data
+    const [day, month, year] = date.split('/')
+    const datetime = `${year}-${month}-${day} ${hour}:00`
     const functionThatReturnPromise = () => {
-      // eslint-disable-next-line
-      //TODO: fetch POST
-      return new Promise((resolve) => setTimeout(resolve, 3000))
+      const obj = {
+        title: data.nameEvent,
+        description: data.describeEvent,
+        id_user_org: 2,
+        datetime,
+        location: data.place,
+        description_location: data.describePlace,
+        guests: [1, 3, 4]
+      }
+
+      return fetch(`${import.meta.env.VITE_BASE_URL}/meeting`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+      })
+        .then(res => {
+          if (res.ok) return res.json()
+
+          throw new Error('Algo salio mal')
+        })
+        .then(
+          data => console.log(data)
+        )
+        .catch(error => {
+          console.log(error)
+        })
     }
 
     toast.promise(
       functionThatReturnPromise,
       {
         pending: 'Creando tu reunión',
-        success: 'Promise resolved 👌',
-        error: 'Debes tener almenos un invitado 🤯'
+        success: 'Reunión creada 👌',
+        error: 'Hubo un problema con la creacion 🤯'
       },
       {
         position: 'bottom-center',
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
         draggable: true,
         progress: undefined,
         theme: 'dark'
@@ -55,44 +82,44 @@ export function EventCreationForm () {
   })
 
   return (
-  <>
-    <form className={style.formContainer} onSubmit={onSubmit}>
-      <InputForm
-        type='text'
-        label='Nombre reunión'
-        register={register}
-        placeholder='Qué título tiene la reunión'
-        id='nameEvent'
-        error={errors?.nameEvent}
-      />
-
-      <AreaForm
-        label='Descripción reunión'
-        register={register}
-        placeholder='Deseas agregar algún detalle'
-        id='describeEvent'
-        error={errors?.describeEvent}
-      />
-
-      <EventProposalInput
-        register={register}
-        errors={errors}
-        setValue={setValue}
+    <>
+      <form className={style.formContainer} onSubmit={onSubmit}>
+        <InputForm
+          type='text'
+          label='Nombre reunión'
+          register={register}
+          placeholder='Qué título tiene la reunión'
+          id='nameEvent'
+          error={errors?.nameEvent}
         />
 
-      <AreaForm
-        label='Descripción lugar'
-        register={register}
-        placeholder='Deseas agregar algún detalle'
-        id='describePlace'
-        error={errors?.describePlace}
-      />
-      <div className={style.interaction}>
-        <button disabled type='button' className={style.addGuest}>Agregar Invitados <Plus /></button>
-        <button className={style.createEvent} type='submit'> Crear reunión </button>
-      </div>
-    </form>
-    <ToastContainer />
-  </>
+        <AreaForm
+          label='Descripción reunión'
+          register={register}
+          placeholder='Deseas agregar algún detalle'
+          id='describeEvent'
+          error={errors?.describeEvent}
+        />
+
+        <EventProposalInput
+          register={register}
+          errors={errors}
+          setValue={setValue}
+        />
+
+        <AreaForm
+          label='Descripción lugar'
+          register={register}
+          placeholder='Deseas agregar algún detalle'
+          id='describePlace'
+          error={errors?.describePlace}
+        />
+        <div className={style.interaction}>
+          <button disabled type='button' className={style.addGuest}>Agregar Invitados <Plus /></button>
+          <button className={style.createEvent} type='submit'> Crear reunión </button>
+        </div>
+      </form>
+      <ToastContainer />
+    </>
   )
 }

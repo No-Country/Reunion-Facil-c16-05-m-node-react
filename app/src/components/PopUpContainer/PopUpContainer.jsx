@@ -1,18 +1,20 @@
 import { cloneElement } from 'react'
-import './PopUpContainer.css'
 
 export function PopUpContainer ({ children, icon, onOpen }) {
+  const { label } = children.props
+
   return (
     <>
       {
         cloneElement(children,
           {},
-            <button
-              className='icon-input'
-              type='button'
-              onClick={() => typeof onOpen === 'function' && onOpen()}>
-              {icon}
-            </button>)
+          <button
+            aria-label={`boton que abre un popup de ${label}`}
+            type='button'
+            onClick={() => typeof onOpen === 'function' && onOpen()}>
+            {icon}
+          </button>
+        )
       }
     </>
   )

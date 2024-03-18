@@ -12,19 +12,20 @@ export default function GuestSelected () {
   }
 
   return (
-  <section className={style.listGuestSelected}>
+    <section className={style.listGuestSelected}>
       {
         listGuests.map(({ idUser, nickname }) => {
           return (
-        <article
-          key={idUser}
-          className={style.containGuest}>
-          <span>{nickname[0].toUpperCase()}</span>
-          <button onClick={handleRemove({ nickname })}>❌</button>
-        </article>
+            <article
+              key={idUser}
+              className={style.containGuest}
+            >
+              <span>{nickname[0].toUpperCase()}</span>
+              <button onClick={handleRemove({ nickname })}>❌</button>
+            </article>
           )
         })
       }
-  </section>
+    </section>
   )
 }

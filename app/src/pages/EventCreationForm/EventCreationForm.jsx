@@ -14,6 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { EventSchema } from '../../validators/EventSchema'
 import { ProposalSchema } from '../../validators/ProposalSchema'
 import { Plus } from '../../icons'
+import { Link } from 'react-router-dom'
 
 const schema = EventSchema.merge(ProposalSchema)
 
@@ -115,7 +116,7 @@ export function EventCreationForm () {
           error={errors?.describePlace}
         />
         <div className={style.interaction}>
-          <button disabled type='button' className={style.addGuest}>Agregar Invitados <Plus /></button>
+          <Link to='invitado' type='button' className={style.addGuest}>Agregar Invitados <Plus /></Link>
           <button className={style.createEvent} type='submit'> Crear reunión </button>
         </div>
       </form>

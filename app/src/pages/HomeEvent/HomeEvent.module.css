@@ -29,6 +29,7 @@
 }
 
 .plus {
+    display: flex;
     background: red;
     padding: 15px;
     border-radius: var(--rounded);

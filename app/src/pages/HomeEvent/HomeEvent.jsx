@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Plus } from '../../icons'
 import style from './HomeEvent.module.css'
+import { Link } from 'react-router-dom'
 
 export function HomeEvent () {
   const [events, setEvents] = useState([])
@@ -54,7 +55,7 @@ export function HomeEvent () {
                     </article>
                   )
                 })
-                : <div className={style.plus}> <Plus /> </div>
+                : <div> <Link className={style.plus} to='crear-reunion' > <Plus /> </Link> </div>
           }
     </div>
   )

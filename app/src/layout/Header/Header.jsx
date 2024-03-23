@@ -1,6 +1,7 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { LogotipoReunionFacils } from '../../components/LogotipoReunionFacil/LogotipoReunionFacil'
 import style from './Header.module.css'
+import { Arrow } from '../../icons'
 
 export function Header () {
   const { pathname } = useLocation()
@@ -10,8 +11,10 @@ export function Header () {
       <>
         <div className={style.header}>
           <nav>
-            <Link to="/crear-reunion">⬅</Link>
-            <span>Invitados</span>
+            <Link to="/crear-reunion">
+              <Arrow />
+              <span>Invitados</span>
+            </Link>
           </nav>
           <LogotipoReunionFacils />
         </div>
@@ -23,7 +26,12 @@ export function Header () {
   return (
     <>
       <div className={style.header}>
-        <span>Crear nueva reunión</span>
+        <nav>
+          <Link to="/">
+            <Arrow />
+            <span>Crear nueva reunión</span>
+          </Link>
+        </nav>
         <LogotipoReunionFacils />
       </div>
       <Outlet />

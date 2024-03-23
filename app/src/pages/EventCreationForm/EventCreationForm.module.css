@@ -23,6 +23,9 @@
     margin: auto;
     border: 0;
     font-size: var(--text-base);
+    text-decoration: none;
+    background: #000;
+    color: #fff
 }
 
 .addGuest:active:not([disabled])  {

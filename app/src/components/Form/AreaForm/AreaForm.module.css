@@ -27,10 +27,6 @@
 .containerArea label textarea {
     padding: 14px;
 }
-.containerArea label textarea::placeholder {
-    font-size: var(--text-base);
-    font-weight: var(--font-regular);
-}
 
 .containerArea label textarea:focus::placeholder {
     color: var(--color-primary);

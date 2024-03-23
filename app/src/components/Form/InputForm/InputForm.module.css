@@ -54,11 +54,6 @@
     border: 1px solid var(--color-secondary);
 }
 
-.containerInput label input::placeholder {
-    font-size: var(--text-base);
-    font-weight: var(--font-regular);
-}
-
 .containerInput label input:focus::placeholder {
     color: var(--color-primary);
 }

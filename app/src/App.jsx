@@ -4,6 +4,7 @@ import { EventCreationForm } from './pages/EventCreationForm/EventCreationForm'
 import { Header } from './layout/Header/Header'
 import { HeaderHome } from './layout/HeaderHome/HeaderHome'
 import { HomeEvent } from './pages/HomeEvent/HomeEvent'
+import { GuestsInvitation } from './pages/GuestsInvitation'
 
 function App () {
   return (
@@ -13,7 +14,7 @@ function App () {
       </Route>
       <Route path='/crear-reunion' element={<Header />}>
         <Route index element={<EventCreationForm />} />
-        <Route path='invitado' element={<h1>Pantalla de agregar invitado</h1>} />
+        <Route path='invitado' element={<GuestsInvitation />} />
       </Route>
     </Routes>
   )

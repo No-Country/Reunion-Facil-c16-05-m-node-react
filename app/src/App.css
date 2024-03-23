@@ -32,7 +32,7 @@
     src: url('/fonts/Inter-SemiBold.ttf');
 }
 
-body {
+* {
     font-family: 'Inter', sans-serif;
 }
 

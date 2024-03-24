@@ -4,8 +4,10 @@ import { InputForm } from '../Form/InputForm/InputForm'
 import { useClock } from '../../hook/useClock'
 import { PopUp } from '../PopUp/PopUp'
 import { PopUpContainer } from '../PopUpContainer/PopUpContainer'
+import { useFormContext } from 'react-hook-form'
 
-export function ClockCardAll ({ error, register, selectedTime, onTimeChange, setValue }) {
+export function ClockCardAll ({ selectedTime, onTimeChange }) {
+  const { setValue, register, formState: { errors } } = useFormContext()
   const {
     selectedHour,
     selectedMinutes,
@@ -25,7 +27,7 @@ export function ClockCardAll ({ error, register, selectedTime, onTimeChange, set
           register={register}
           placeholder='19:00'
           id='hour'
-          error={error}
+          error={errors?.hour}
           value={selectedTime}
           readOnly
         />

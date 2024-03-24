@@ -4,8 +4,10 @@ import { InputForm } from '../Form/InputForm/InputForm'
 import { useCalendar } from '../../hook/useCalendar'
 import { PopUp } from '../PopUp/PopUp'
 import { PopUpContainer } from '../PopUpContainer/PopUpContainer'
+import { useFormContext } from 'react-hook-form'
 
-export function CalendarAll ({ error, register , setValue }) {
+export function CalendarAll () {
+  const { register, formState: { errors }, setValue } = useFormContext()
   const {
     year,
     month,
@@ -25,7 +27,7 @@ export function CalendarAll ({ error, register , setValue }) {
           register={register}
           placeholder='01/02/2024'
           id='date'
-          error={error}
+          error={errors?.date}
         />
       </PopUpContainer>
 

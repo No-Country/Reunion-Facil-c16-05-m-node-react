@@ -5,9 +5,11 @@ import { MapPin } from '../../icons'
 import { CalendarAll } from '../CalendarAll/CalendarAll'
 import { ClockCardAll } from '../ClockCardAll/ClockCardAll'
 import { useState } from 'react'
+import { useFormContext } from 'react-hook-form'
 
-export function EventProposalInput ({ register, errors, setValue }) {
+export function EventProposalInput () {
   const [selectedTime, setSelectedTime] = useState('19:00')
+  const { setValue, register, formState: { errors } } = useFormContext()
 
   const handleTimeChange = (time) => {
     setSelectedTime(time)
@@ -18,18 +20,11 @@ export function EventProposalInput ({ register, errors, setValue }) {
     <div className={style.container}>
       <div className={style.containerTempo}>
 
-        <CalendarAll
-          error={errors?.date}
-          register={register}
-          setValue={setValue}
-        />
+        <CalendarAll />
 
         <ClockCardAll
-          error={errors?.hour}
-          register={register}
           selectedTime={selectedTime}
           onTimeChange={handleTimeChange}
-          setValue={setValue}
         />
       </div>
 
